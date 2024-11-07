@@ -4,7 +4,7 @@
     "host": "0.0.0.0"
   },
   "database": {
-    "connectionString": "mongodb+srv://faisalilyas2005:<db_password>@cluster0.tqian.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "connectionString": "mongodb+srv://faisalilyas2005:gulezahra812004@cluster0.tqian.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
     "useNewUrlParser": true,
     "useUnifiedTopology": true
   },

@@ -5,7 +5,7 @@ const authRouter = require('./routes/auth');
 const PORT = 3000;
 
 const app = express();
-const DB = 'mongodb+srv://faisalilyas2005:faysal%40%40123@cluster0.tqian.mongodb.net/mydatabase?retryWrites=true&w=majority';
+const DB = 'mongodb+srv://faisalilyas2005:gulezahra812004@cluster0.tqian.mongodb.net/mydatabase?retryWrites=true&w=majority';
 
 app.use(express.json());
 app.use(authRouter);
