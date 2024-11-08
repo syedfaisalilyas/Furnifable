@@ -9,7 +9,8 @@
     "useUnifiedTopology": true
   },
   "routes": {
-    "auth": "./routes/auth"
+    "auth": "./routes/auth",
+    "product": "./routes/product"
   },
   "features": {
     "enableJsonParsing": true

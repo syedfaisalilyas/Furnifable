@@ -43,7 +43,15 @@ try {
     console.error("Error loading auth route:", err);
     process.exit(1);
 }
-
+// Import product route dynamically
+try {
+    const productRouterPath = config.routes?.product || path.join(__dirname, 'routes', 'product.js');
+    const productRouter = require(productRouterPath);
+    app.use(productRouter);
+} catch (err) {
+    console.error("Error loading product route:", err);
+    process.exit(1);
+}
 // Connect to MongoDB
 mongoose.connect(DB, {
     useNewUrlParser: true,
