@@ -118,4 +118,22 @@ authRouter.put('/api/updateProduct/:id', async (req, res) => {
     }
 });
 
+authRouter.get('/api/searchProduct', async (req, res) => {
+    try {
+        const { name, category, minPrice, maxPrice, filter } = req.query;
+        const query = {};
+
+        if (name) query.name = { $regex: name, $options: 'i' };
+        if (category) query.category = category;
+        if (filter) query.filter = filter;
+        if (minPrice) query.currentPrice = { $gte: Number(minPrice) };
+        if (maxPrice) query.currentPrice = { ...query.currentPrice, $lte: Number(maxPrice) };
+
+        const products = await Product.find(query);
+        res.json({ products });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+});
+
 module.exports = authRouter;
