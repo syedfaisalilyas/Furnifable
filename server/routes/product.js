@@ -1,5 +1,5 @@
 const express = require('express');
-const Product = require('../models/ProductModel');
+const Product = require('../models/product');
 const authRouter = express.Router();
 
 authRouter.post('/api/addProduct', async (req, res) => {
