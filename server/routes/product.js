@@ -50,4 +50,24 @@ authRouter.post('/api/addProduct', async (req, res) => {
     }
 });
 
+authRouter.delete('/api/deleteProduct/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        // Check if product exists
+        const product = await Product.findOne({ id });
+        if (!product) {
+            return res.status(404).json({ msg: 'Product not found' });
+        }
+
+        // Delete product from the database
+        await Product.deleteOne({ id });
+        res.json({ msg: 'Product deleted successfully' });
+
+    } catch (e) {
+        res.status(500).json({ error: e.message });
+    }
+});
+
+
 module.exports = authRouter;

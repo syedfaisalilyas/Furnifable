@@ -52,6 +52,7 @@ try {
     console.error("Error loading product route:", err);
     process.exit(1);
 }
+
 // Connect to MongoDB
 mongoose.connect(DB, {
     useNewUrlParser: true,
